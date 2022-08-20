@@ -1,5 +1,7 @@
 class StrainsController < ApplicationController
   before_action :set_strain, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  before_action :auth_user
 
   # GET /strains or /strains.json
   def index
@@ -67,4 +69,11 @@ class StrainsController < ApplicationController
     def strain_params
       params.require(:strain).permit(:name)
     end
+
+    def auth_user
+      unless current_user.roles.pluck(:name) == ["admin"]
+    redirect_to root_path
+      end
+  end
+
 end

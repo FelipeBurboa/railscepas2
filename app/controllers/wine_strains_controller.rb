@@ -1,5 +1,7 @@
 class WineStrainsController < ApplicationController
   before_action :set_wine_strain, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  before_action :auth_user
 
   # GET /wine_strains or /wine_strains.json
   def index
@@ -67,4 +69,10 @@ class WineStrainsController < ApplicationController
     def wine_strain_params
       params.require(:wine_strain).permit(:wine_id, :strain_id, :percentage)
     end
+
+    def auth_user
+      unless current_user.roles.pluck(:name) == ["admin"]
+    redirect_to root_path
+      end
+  end
 end

@@ -22,18 +22,13 @@
   </div>
 
   <div>
-    <%= form.label :strains %>
+    <%= form.label :strains %> <br />
     <%= form.collection_check_boxes(:strain_ids, @strains_availables, :id, :name) do |b| %>
       <%= b.label class: "label_checkbox" do %>
         <%= b.check_box + b.text %>
         <%= text_field("wine[strains_percentage]", b.value, value:@wine.getPercentageByStrainId(b.value)) %>
       <% end %>
     <% end %>
-  </div>
-
-  <div>
-    <%= form.label :avatar, style:"display: block" %>
-    <%= form.file_field :avatar %>
   </div>
 
   <div>

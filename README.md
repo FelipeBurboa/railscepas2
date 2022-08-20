@@ -1,9 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+* Hacer bundle install
+* Registrar nuevo usuario
+* Usar: rails c
+* Usar comando: User.first.add_role :admin
+* El rol de :admin podrá ver los usuarios en el view de users
+* El admin puede crear vinos y strains
+* Enologos solo pueden crear vinos y modificarlos
 
 * Ruby version
 

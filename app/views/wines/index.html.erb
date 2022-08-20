@@ -6,10 +6,15 @@
   <% @wines.each do |wine| %>
     <%= render wine %>
     
+     <% if current_user %>
     <p>
       <%= link_to "Show this wine", wine %>
     </p>
+      <% end %>
   <% end %>
 </div>
 
+
+<% if current_user %>
 <%= link_to "New wine", new_wine_path %>
+<% end %>
