@@ -1,5 +1,6 @@
 # README
 
+* Usando el ejercicio guiado de Cepas 1, subido a github por Cesar
 * Hacer bundle install
 * Registrar nuevo usuario
 * Usar: rails c
