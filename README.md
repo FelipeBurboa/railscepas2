@@ -8,6 +8,8 @@
 * El rol de :admin podrá ver los usuarios en el view de users
 * El admin puede crear vinos y strains
 * Enologos solo pueden crear vinos y modificarlos
+* bundle exec rspec spec/models/strain_spec.rb Para cepas
+* 
 
 * Ruby version
 
